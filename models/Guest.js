@@ -18,7 +18,7 @@ const guestSchema = new Schema({
 });
 
 //Create model class
-const ModelClass = mongoose.model('guest', guestSchema);
+const ModelClass = mongoose.model('guests', guestSchema);
 
 //Export the model
 module.exports = ModelClass;

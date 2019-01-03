@@ -9,9 +9,8 @@ export const fetchUser = () => async dispatch => {
 export const uploadFile = (file) => async dispatch => {
   const data = new FormData();
   data.append('file', file, 'list.xlsx');
-  console.log('hello there', data);
   const res = await axios.post('/upload', data);
-  console.log('RESPOISEf: ', res.data);
+  console.log(res);
 }
 
 export const fetchHello = () => async dispatch => {

@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
-require('./routes/listUpload')(app);
+require('./routes/listRoutes')(app);
 require('./routes/hello')(app);
 
 if(process.env.NODE_ENV === 'production'){
