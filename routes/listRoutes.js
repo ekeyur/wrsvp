@@ -25,14 +25,17 @@ module.exports = (app) => {
   });
 
   app.get('/api/add_guests', (req,res) => {
+    console.log('Here');
     readXlsxFile(fs.createReadStream(`${fileStorePath}${fileName}`))
         .then(rows => {
+          console.log(rows);
           const guests = Utils.rowsToModel(rows);
           Guest.insertMany(guests, (err, docs) => {
             if(err) { return err }
             res.json(docs);
           })
-      });
+      })
+      .catch(err => console.log("error in adding guests", err))
     });
   
     app.get('/api/guests', async (req, res) => {
